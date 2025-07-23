@@ -11,10 +11,20 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+    <div class="business-card">
+        <img src="https://source.unsplash.com/80x80/?businessman,portrait" alt="Founder">
+        <h4>Founder & Creator</h4>
+        <p>Justice Fashion</p>
+        <p class="phone-number">+234 902 522 9337</p>
+    </div>
     <header>
         <nav class="navbar">
             <div class="logo">
                 <h1>Justice Fashion</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for dresses, accessories...">
+                <button><i class="fas fa-search"></i></button>
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
@@ -23,6 +33,15 @@
                 <li><a href="#sale">Sale</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="#" class="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -36,27 +55,70 @@
         </section>
 
         <section id="collections" class="collections">
-            <h2>Our Collections</h2>
+            <div class="section-header">
+                <h2>Our Collections</h2>
+                <div class="filter-options">
+                    <select class="sort-select">
+                        <option value="latest">Sort by Latest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
             <div class="collections-grid">
                 <div class="collection-card">
-                    <img src="https://source.unsplash.com/800x600/?dress,evening" alt="Evening Collection">
-                    <div class="collection-info">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/800x600/?dress,evening" alt="Evening Collection">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
                         <h3>Evening Dresses</h3>
+                        <div class="product-price">
+                            <span class="price">₦29,999</span>
+                            <span class="discount">-20%</span>
+                        </div>
                         <p>Elegant and sophisticated</p>
+                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
                 <div class="collection-card">
-                    <img src="https://source.unsplash.com/800x600/?dress,cocktail" alt="Cocktail Collection">
-                    <div class="collection-info">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/800x600/?dress,cocktail" alt="Cocktail Collection">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
                         <h3>Cocktail Dresses</h3>
+                        <div class="product-price">
+                            <span class="price">₦19,999</span>
+                            <span class="discount">-15%</span>
+                        </div>
                         <p>Perfect for special occasions</p>
+                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
                 <div class="collection-card">
-                    <img src="https://source.unsplash.com/800x600/?dress,summer" alt="Summer Collection">
-                    <div class="collection-info">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/800x600/?dress,summer" alt="Summer Collection">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
                         <h3>Summer Dresses</h3>
+                        <div class="product-price">
+                            <span class="price">₦14,999</span>
+                            <span class="discount">-10%</span>
+                        </div>
                         <p>Light and comfortable</p>
+                        <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -113,7 +175,8 @@
                     <div class="contact-info">
                         <h3>Get in Touch</h3>
                         <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, City, Country</p>
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-phone"></i> Owner: +234 902 522 9337</p>
+                        <p><i class="fas fa-phone-alt"></i> Customer Service: +234 806 224 0288</p>
                         <p><i class="fas fa-envelope"></i> info@justicefashion.com</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-instagram"></i></a>

@@ -12,12 +12,92 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = '#fff';
-        navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'transparent';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
+});
+
+// Search functionality
+const searchInput = document.querySelector('.search-bar input');
+const searchButton = document.querySelector('.search-bar button');
+
+searchButton.addEventListener('click', () => {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm) {
+        alert(`Searching for "${searchTerm}"...`);
+        // In a real implementation, you would make an API call here
+    }
+});
+
+// Cart functionality
+const cartIcon = document.querySelector('.cart-icon');
+const cartCount = document.querySelector('.cart-count');
+let cartItemCount = 0;
+
+function updateCartCount() {
+    cartCount.textContent = cartItemCount;
+}
+
+// Add to cart functionality
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.closest('.collection-card').querySelector('h3').textContent;
+        cartItemCount++;
+        updateCartCount();
+        alert(`Added ${productName} to cart!`);
+    });
+});
+
+// Wishlist functionality
+document.querySelectorAll('.add-to-wishlist').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.closest('.collection-card').querySelector('h3').textContent;
+        this.classList.toggle('added');
+        if (this.classList.contains('added')) {
+            this.style.color = '#e91e63';
+            alert(`Added ${productName} to wishlist!`);
+        } else {
+            this.style.color = '';
+            alert(`Removed ${productName} from wishlist!`);
+        }
+    });
+});
+
+// Quick view functionality
+document.querySelectorAll('.quick-view').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.closest('.collection-card').querySelector('h3').textContent;
+        alert(`Quick viewing ${productName}...`);
+        // In a real implementation, you would show a modal with product details
+    });
+});
+
+// Form submission handling
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your submission! We will get back to you soon.');
+        form.reset();
+    });
+});
+
+// Active link highlighting
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Sort products functionality
+const sortSelect = document.querySelector('.sort-select');
+
+sortSelect.addEventListener('change', function() {
+    const selectedOption = this.value;
+    alert(`Sorting products by: ${selectedOption}`);
+    // In a real implementation, you would sort the products array here
 });
 
 // Contact form handling
