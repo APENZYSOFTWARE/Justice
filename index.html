@@ -28,8 +28,33 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#collections">Collections</a></li>
-                <li><a href="#trends">Latest Trends</a></li>
+                <li><a href="#collections">Dresses</a>
+                    <ul class="dropdown">
+                        <li><a href="#evening">Evening Dresses</a></li>
+                        <li><a href="#cocktail">Cocktail Dresses</a></li>
+                        <li><a href="#summer">Summer Dresses</a></li>
+                        <li><a href="#casual">Casual Dresses</a></li>
+                        <li><a href="#wedding">Wedding Dresses</a></li>
+                    </ul>
+                </li>
+                <li><a href="#shoes">Shoes</a>
+                    <ul class="dropdown">
+                        <li><a href="#heels">High Heels</a></li>
+                        <li><a href="#sandals">Sandals</a></li>
+                        <li><a href="#boots">Boots</a></li>
+                        <li><a href="#flats">Flats</a></li>
+                    </ul>
+                </li>
+                <li><a href="#accessories">Accessories</a>
+                    <ul class="dropdown">
+                        <li><a href="#necklaces">Necklaces</a></li>
+                        <li><a href="#bags">Bags</a></li>
+                        <li><a href="#belts">Belts</a></li>
+                        <li><a href="#watches">Watches</a></li>
+                        <li><a href="#lenses">Sunglasses</a></li>
+                        <li><a href="#jewelry">Other Jewelry</a></li>
+                    </ul>
+                </li>
                 <li><a href="#sale">Sale</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -67,57 +92,102 @@
                 </div>
             </div>
             <div class="collections-grid">
-                <div class="collection-card">
+                <!-- Evening Dresses -->
+                <div class="collection-card dress evening">
                     <div class="product-image">
-                        <img src="https://source.unsplash.com/800x600/?dress,evening" alt="Evening Collection">
+                        <img src="https://source.unsplash.com/800x600/?dress,evening,formal" alt="Evening Gown">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
                             <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Evening Dresses</h3>
+                        <h3>Evening Gown</h3>
                         <div class="product-price">
                             <span class="price">₦29,999</span>
                             <span class="discount">-20%</span>
                         </div>
-                        <p>Elegant and sophisticated</p>
+                        <p>Elegant floor-length gown</p>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
-                <div class="collection-card">
+
+                <!-- Watches -->
+                <div class="collection-card accessory watch">
                     <div class="product-image">
-                        <img src="https://source.unsplash.com/800x600/?dress,cocktail" alt="Cocktail Collection">
+                        <img src="https://source.unsplash.com/800x600/?watch,luxury" alt="Luxury Watch">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
                             <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Cocktail Dresses</h3>
+                        <h3>Luxury Watch</h3>
                         <div class="product-price">
-                            <span class="price">₦19,999</span>
+                            <span class="price">₦49,999</span>
                             <span class="discount">-15%</span>
                         </div>
-                        <p>Perfect for special occasions</p>
+                        <p>Stainless steel with leather strap</p>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
-                <div class="collection-card">
+
+                <!-- Sunglasses -->
+                <div class="collection-card accessory lens">
                     <div class="product-image">
-                        <img src="https://source.unsplash.com/800x600/?dress,summer" alt="Summer Collection">
+                        <img src="https://source.unsplash.com/800x600/?sunglasses,designer" alt="Designer Sunglasses">
                         <div class="product-actions">
                             <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
                             <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Summer Dresses</h3>
+                        <h3>Designer Sunglasses</h3>
                         <div class="product-price">
                             <span class="price">₦14,999</span>
                             <span class="discount">-10%</span>
                         </div>
-                        <p>Light and comfortable</p>
+                        <p>UV protection, polarized lenses</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- More dress varieties -->
+                <div class="collection-card dress casual">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/800x600/?dress,casual,day" alt="Casual Summer Dress">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Casual Summer Dress</h3>
+                        <div class="product-price">
+                            <span class="price">₦12,999</span>
+                            <span class="discount">-12%</span>
+                        </div>
+                        <p>Comfortable cotton fabric</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Wedding Dresses -->
+                <div class="collection-card dress wedding">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/800x600/?dress,wedding,bridal" alt="Bridal Gown">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i> Quick View</button>
+                            <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bridal Gown</h3>
+                        <div class="product-price">
+                            <span class="price">₦79,999</span>
+                            <span class="discount">-25%</span>
+                        </div>
+                        <p>Lace and satin wedding dress</p>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
