@@ -171,13 +171,16 @@
                         <div class="product-details">
                             <p class="product-description">Elegant floor-length formal dress with lace details</p>
                             <div class="size-chart">
-                                <h4>Available Sizes</h4>
-                                <div class="size-options">
-                                    <button class="size-btn active" data-size="S">S</button>
-                                    <button class="size-btn" data-size="M">M</button>
-                                    <button class="size-btn" data-size="L">L</button>
-                                    <button class="size-btn disabled" data-size="XL">XL</button>
-                                </div>
+                                <h4>Size</h4>
+                                <select class="size-select" name="size">
+                                    <option value="">Select Size</option>
+                                    <option value="XS">XS</option>
+                                    <option value="S" selected>S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="XXL">XXL</option>
+                                </select>
                                 <div class="size-guide-toggle">
                                     <button class="toggle-guide"><i class="fas fa-info-circle"></i> Size Guide</button>
                                 </div>
@@ -223,36 +226,59 @@
                             <p class="product-description">Comfortable cotton summer dress with floral print</p>
                             <div class="size-chart">
                                 <h4>Size Guide</h4>
-                                <table>
-                                    <tr>
-                                        <th>Size</th>
-                                        <th>Bust (cm)</th>
-                                        <th>Waist (cm)</th>
-                                        <th>Hips (cm)</th>
-                                        <th>Length (cm)</th>
-                                    </tr>
-                                    <tr>
-                                        <td>S</td>
-                                        <td>76-81</td>
-                                        <td>61-66</td>
-                                        <td>81-86</td>
-                                        <td>120</td>
-                                    </tr>
-                                    <tr>
-                                        <td>M</td>
-                                        <td>81-86</td>
-                                        <td>66-71</td>
-                                        <td>86-91</td>
-                                        <td>122</td>
-                                    </tr>
-                                    <tr>
-                                        <td>L</td>
-                                        <td>86-91</td>
-                                        <td>71-76</td>
-                                        <td>91-96</td>
-                                        <td>124</td>
-                                    </tr>
-                                </table>
+                                <div class="size-guide-content">
+                                    <table>
+                                        <tr>
+                                            <th>Size</th>
+                                            <th>Bust (cm)</th>
+                                            <th>Waist (cm)</th>
+                                            <th>Hips (cm)</th>
+                                            <th>Length (cm)</th>
+                                        </tr>
+                                        <tr>
+                                            <td>XS</td>
+                                            <td>71-76</td>
+                                            <td>56-61</td>
+                                            <td>76-81</td>
+                                            <td>118</td>
+                                        </tr>
+                                        <tr>
+                                            <td>S</td>
+                                            <td>76-81</td>
+                                            <td>61-66</td>
+                                            <td>81-86</td>
+                                            <td>120</td>
+                                        </tr>
+                                        <tr>
+                                            <td>M</td>
+                                            <td>81-86</td>
+                                            <td>66-71</td>
+                                            <td>86-91</td>
+                                            <td>122</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td>86-91</td>
+                                            <td>71-76</td>
+                                            <td>91-96</td>
+                                            <td>124</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XL</td>
+                                            <td>91-96</td>
+                                            <td>76-81</td>
+                                            <td>96-101</td>
+                                            <td>126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XXL</td>
+                                            <td>96-101</td>
+                                            <td>81-86</td>
+                                            <td>101-106</td>
+                                            <td>128</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="color-options">
                                 <h4>Available Colors</h4>
@@ -303,27 +329,50 @@
                                         <th>Heel Height (cm)</th>
                                     </tr>
                                     <tr>
+                                        <td>35</td>
+                                        <td>22.0</td>
+                                        <td>8.0</td>
+                                        <td>1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>36</td>
+                                        <td>22.5</td>
+                                        <td>8.3</td>
+                                        <td>1.5</td>
+                                    </tr>
+                                    <tr>
                                         <td>37</td>
                                         <td>23.0</td>
-                                        <td>8.8</td>
+                                        <td>8.6</td>
                                         <td>1.5</td>
                                     </tr>
                                     <tr>
                                         <td>38</td>
                                         <td>23.5</td>
-                                        <td>9.0</td>
+                                        <td>8.9</td>
                                         <td>1.5</td>
                                     </tr>
                                     <tr>
                                         <td>39</td>
                                         <td>24.0</td>
-                                        <td>9.3</td>
+                                        <td>9.2</td>
                                         <td>1.5</td>
                                     </tr>
                                     <tr>
                                         <td>40</td>
                                         <td>24.5</td>
-                                        <td>9.5</td>
+                                        <td>9.5</td>	dt>1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>41</td>
+                                        <td>25.0</td>
+                                        <td>9.8</td>
+                                        <td>1.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>42</td>
+                                        <td>25.5</td>
+                                        <td>10.1</td>
                                         <td>1.5</td>
                                     </tr>
                                 </table>
@@ -378,21 +427,33 @@
                                         <th>Heel Height (cm)</th>
                                     </tr>
                                     <tr>
+                                        <td>35</td>
+                                        <td>22.0</td>
+                                        <td>8.0</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
                                         <td>36</td>
                                         <td>22.5</td>
-                                        <td>8.5</td>
+                                        <td>8.3</td>
                                         <td>10</td>
                                     </tr>
                                     <tr>
                                         <td>37</td>
                                         <td>23.0</td>
-                                        <td>8.8</td>
+                                        <td>8.6</td>
                                         <td>10</td>
                                     </tr>
                                     <tr>
                                         <td>38</td>
                                         <td>23.5</td>
-                                        <td>9.0</td>
+                                        <td>8.9</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>39</td>
+                                        <td>24.0</td>
+                                        <td>9.2</td>
                                         <td>10</td>
                                     </tr>
                                 </table>
@@ -1281,16 +1342,26 @@
         const welcomeClose = document.querySelector('.welcome-close');
         const welcomeMessage = document.querySelector('.welcome-message');
 
-        // Initialize Speech Synthesis
+        // Initialize Speech Synthesis with enhanced voice settings
         function speakWelcomeMessage() {
             const utterance = new SpeechSynthesisUtterance();
-            utterance.text = "Welcome to Luxurious Justice Fashion! We're delighted to have you with us. Enjoy your shopping experience!";
+            utterance.text = "Welcome to Luxurious Justice Fashion! We're delighted to have you with us today. Our collection features exquisite ladies' fashion, from elegant dresses to stylish accessories. Please take your time to explore our carefully curated selection. Enjoy your shopping experience!";
             utterance.lang = 'en-US';
-            utterance.rate = 1.1;
-            utterance.pitch = 1.1;
+            utterance.rate = 0.9; // Slower, more professional pace
+            utterance.pitch = 1.0; // Natural pitch
+            utterance.volume = 0.8; // Comfortable volume
             
-            // Check if speech synthesis is supported
+            // Set voice to be more professional
             if ('speechSynthesis' in window) {
+                const voices = speechSynthesis.getVoices();
+                // Find a professional-sounding voice
+                const professionalVoice = voices.find(voice => 
+                    voice.name.includes('Microsoft') || 
+                    voice.name.includes('Google')
+                );
+                if (professionalVoice) {
+                    utterance.voice = professionalVoice;
+                }
                 speechSynthesis.speak(utterance);
             }
         }
