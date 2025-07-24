@@ -973,6 +973,149 @@
                 </div>
             </div>
         </section>
+    <!-- Order Verification Modal -->
+    <div id="verificationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Verification</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="verificationStep1" class="verification-step active">
+                    <h3>Step 1: Generate Verification Code</h3>
+                    <p>Please enter your phone number to receive a verification code:</p>
+                    <form id="phoneForm">
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Code</button>
+                    </form>
+                </div>
+                <div id="verificationStep2" class="verification-step">
+                    <h3>Step 2: Enter Verification Code</h3>
+                    <p>We've sent a verification code to your phone number. Please enter it below:</p>
+                    <form id="codeForm">
+                        <div class="form-group">
+                            <label for="verificationCode">Verification Code:</label>
+                            <input type="text" id="verificationCode" name="verificationCode" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Verify</button>
+                    </form>
+                </div>
+                <div id="verificationStep3" class="verification-step">
+                    <h3>Order Details</h3>
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div id="orderItems"></div>
+                        <div class="total-amount">
+                            <span>Total Amount:</span>
+                            <span id="orderTotal">₦0</span>
+                        </div>
+                    </div>
+                    <button id="completeOrder" class="btn-primary">Complete Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add to Cart Button Click Handler -->
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.closest('.collection-card');
+                const productName = product.querySelector('h3').textContent;
+                const price = product.querySelector('.price').textContent;
+                const size = product.querySelector('.size-select').value;
+                const color = product.querySelector('.swatch.active')?.dataset.color || 'N/A';
+                
+                // Add product to order summary
+                const orderItems = document.getElementById('orderItems');
+                const itemHtml = `
+                    <div class="order-item">
+                        <h4>${productName}</h4>
+                        <p>Size: ${size}, Color: ${color}</p>
+                        <p>Price: ${price}</p>
+                    </div>
+                `;
+                orderItems.innerHTML += itemHtml;
+
+                // Calculate total
+                const total = parseFloat(price.replace('₦', '').replace(',', ''));
+                const currentTotal = parseFloat(document.getElementById('orderTotal').textContent.replace('₦', '').replace(',', ''));
+                document.getElementById('orderTotal').textContent = `₦${(total + currentTotal).toLocaleString()}`;
+
+                // Show verification modal
+                document.getElementById('verificationModal').style.display = 'block';
+            });
+        });
+
+        // Close modal
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('verificationModal').style.display = 'none';
+        });
+
+        // Handle phone number submission
+        document.getElementById('phoneForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value;
+            
+            // Simulate code generation
+            const code = Math.floor(100000 + Math.random() * 900000);
+            localStorage.setItem('verificationCode', code);
+            
+            // Show step 2
+            document.getElementById('verificationStep1').classList.remove('active');
+            document.getElementById('verificationStep2').classList.add('active');
+        });
+
+        // Handle code verification
+        document.getElementById('codeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const enteredCode = document.getElementById('verificationCode').value;
+            const storedCode = localStorage.getItem('verificationCode');
+            
+            if (enteredCode === storedCode) {
+                // Show order summary
+                document.getElementById('verificationStep2').classList.remove('active');
+                document.getElementById('verificationStep3').classList.add('active');
+            } else {
+                alert('Invalid verification code. Please try again.');
+            }
+        });
+
+        // Complete order
+        document.getElementById('completeOrder').addEventListener('click', function() {
+            const orderItems = document.getElementById('orderItems').innerHTML;
+            const total = document.getElementById('orderTotal').textContent;
+            
+            // Generate order ID
+            const orderID = 'JUS-' + new Date().toISOString().replace(/\D/g, '').slice(0, 12);
+            
+            // Save order to local storage for record keeping
+            const order = {
+                id: orderID,
+                items: orderItems,
+                total: total,
+                timestamp: new Date().toISOString(),
+                status: 'pending'
+            };
+            
+            // Get existing orders or create new array
+            const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+            orders.push(order);
+            localStorage.setItem('orders', JSON.stringify(orders));
+            
+            // Show order confirmation
+            alert(`Order placed successfully! Your order ID is: ${orderID}`);
+            document.getElementById('verificationModal').style.display = 'none';
+            
+            // Clear order summary
+            document.getElementById('orderItems').innerHTML = '';
+            document.getElementById('orderTotal').textContent = '₦0';
+        });
+    </script>
+
     </main>
 
     <footer>
@@ -1038,33 +1181,39 @@
             z-index: 1000;
         }
 
-        .whatsapp-button {
+        .whatsapp-float button {
             background-color: #25D366;
             color: white;
+            border: none;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
-        .whatsapp-button:hover {
+        .whatsapp-float button:hover {
             transform: scale(1.1);
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        .whatsapp-float i {
+            font-size: 24px;
         }
 
-        .contact-item i {
-            margin-right: 10px;
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
             font-size: 18px;
         }
 
