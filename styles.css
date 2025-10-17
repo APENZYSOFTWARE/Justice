@@ -236,6 +236,7 @@ body {
     margin-bottom: 1.5rem;
     background: linear-gradient(45deg, #e91e63, #f44336);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
 }
@@ -349,6 +350,14 @@ body {
 
 .collection-card.lens {
     border: 2px solid #d1c4e9;
+}
+
+.collection-card.formal {
+    border: 2px solid #A9A9A9;
+}
+
+.collection-card.boot {
+    border: 2px solid #D2B48C;
 }
 
 .product-image img {
