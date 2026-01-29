@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -6,9 +8,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #1a1a1a;
+    color: #333;
+    background-color: #f4f7f6;
 }
 
 
@@ -42,11 +45,11 @@ body {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #ff6a00;
+    border: 2px solid #3A8DDE;
 }
 
 .logo h1 {
-    color: #ff6a00;
+    color: #3A8DDE;
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -64,7 +67,7 @@ body {
 .search-bar input {
     flex: 1;
     padding: 0.75rem 1rem;
-    border: 2px solid #ff6a00;
+    border: 2px solid #3A8DDE;
     border-radius: 25px;
     outline: none;
     font-size: 0.9rem;
@@ -72,12 +75,12 @@ body {
 }
 
 .search-bar input:focus {
-    border-color: #e65c00;
+    border-color: #2F7AC2;
     box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.1);
 }
 
 .search-bar button {
-    background: #ff6a00;
+    background: #3A8DDE;
     color: white;
     border: none;
     padding: 0.75rem 1.25rem;
@@ -87,7 +90,7 @@ body {
 }
 
 .search-bar button:hover {
-    background: #e65c00;
+    background: #2F7AC2;
     transform: translateY(-2px);
 }
 
@@ -119,7 +122,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(90deg, #ff6a00, #ff8c33);
+    background: linear-gradient(90deg, #3A8DDE, #ff8c33);
     transition: width 0.3s ease;
 }
 
@@ -129,7 +132,7 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #ff6a00;
+    color: #3A8DDE;
     transform: translateY(-2px);
 }
 
@@ -155,7 +158,7 @@ body {
 
 .cart-icon i,
 .wishlist-icon i {
-    color: #ff6a00;
+    color: #3A8DDE;
     font-size: 1.1rem;
 }
 
@@ -163,7 +166,7 @@ body {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #ff6a00;
+    background: #3A8DDE;
     color: white;
     font-size: 0.7rem;
     padding: 0.25rem 0.5rem;
@@ -203,13 +206,13 @@ body {
 
 .dropdown a:hover {
     background-color: #f8f9fa;
-    color: #ff6a00;
+    color: #3A8DDE;
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://source.unsplash.com/1600x900/?fashion,dress');
+    background: linear-gradient(135deg, rgba(58, 141, 222, 0.9), rgba(72, 209, 204, 0.8)), url('https://source.unsplash.com/1600x900/?fashion,style');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -234,7 +237,7 @@ body {
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ff6a00, #ff8c33);
+    background: linear-gradient(45deg, #3A8DDE, #ff8c33);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -253,7 +256,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1.2rem 2.5rem;
-    background: linear-gradient(45deg, #ff6a00, #ff8c33);
+    background: linear-gradient(45deg, #3A8DDE, #ff8c33);
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -283,7 +286,7 @@ body {
 .cta-button:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(255, 106, 0, 0.4);
-    background: linear-gradient(45deg, #e65c00, #e53935);
+    background: linear-gradient(45deg, #2F7AC2, #e53935);
 }
 
 /* Collections Section */
@@ -310,7 +313,7 @@ body {
 }
 
 .sort-select:hover {
-    border-color: #ff6a00;
+    border-color: #3A8DDE;
 }
 
 .collections-grid {
@@ -390,7 +393,7 @@ body {
 }
 
 .price {
-    color: #ff6a00;
+    color: #3A8DDE;
     font-weight: 600;
 }
 
@@ -417,21 +420,21 @@ body {
 }
 
 .add-to-cart {
-    background: #ff6a00;
+    background: #3A8DDE;
     color: white;
 }
 
 .add-to-cart:hover {
-    background: #e65c00;
+    background: #2F7AC2;
 }
 
 .quick-view {
-    background: #2196f3;
+    background: #48D1CC;
     color: white;
 }
 
 .quick-view:hover {
-    background: #1976d2;
+    background: #3aa9a3;
 }
 
 .add-to-wishlist {
@@ -469,7 +472,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(233, 30, 99, 0.9);
+    background: rgba(72, 209, 204, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -494,7 +497,7 @@ body {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     background: white;
-    color: #ff6a00;
+    color: #3A8DDE;
     text-decoration: none;
     border-radius: 25px;
     margin-top: 1rem;
@@ -502,7 +505,7 @@ body {
 }
 
 .trend-button:hover {
-    background: #e65c00;
+    background: #2F7AC2;
     color: white;
     transform: translateY(-2px);
 }
@@ -542,7 +545,7 @@ body {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     background: white;
-    color: #ff6a00;
+    color: #3A8DDE;
     text-decoration: none;
     border-radius: 25px;
     margin-top: 1rem;
@@ -550,7 +553,7 @@ body {
 }
 
 .sale-button:hover {
-    background: #e65c00;
+    background: #2F7AC2;
     color: white;
     transform: translateY(-2px);
 }
@@ -586,7 +589,7 @@ body {
     margin-right: 0.5rem;
     width: 20px;
     text-align: center;
-    color: #ff6a00;
+    color: #3A8DDE;
 }
 
 .social-links {
@@ -596,13 +599,13 @@ body {
 }
 
 .social-links a {
-    color: #ff6a00;
+    color: #3A8DDE;
     font-size: 1.8rem;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #e65c00;
+    color: #2F7AC2;
     transform: scale(1.1);
 }
 
@@ -627,7 +630,7 @@ body {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #ff6a00;
+    border-color: #3A8DDE;
     box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.1);
     outline: none;
 }
@@ -639,7 +642,7 @@ body {
 
 .submit-button {
     padding: 1rem 2rem;
-    background: #ff6a00;
+    background: #3A8DDE;
     color: white;
     border: none;
     border-radius: 25px;
@@ -650,7 +653,7 @@ body {
 }
 
 .submit-button:hover {
-    background: #e65c00;
+    background: #2F7AC2;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
 }
@@ -688,7 +691,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #ff6a00;
+    color: #3A8DDE;
 }
 
 .newsletter-form {
@@ -707,7 +710,7 @@ footer {
 
 .newsletter-form button {
     padding: 0.8rem 1.5rem;
-    background: #ff6a00;
+    background: #3A8DDE;
     color: white;
     border: none;
     border-radius: 25px;
@@ -716,7 +719,7 @@ footer {
 }
 
 .newsletter-form button:hover {
-    background: #e65c00;
+    background: #2F7AC2;
     transform: translateY(-2px);
 }
 
@@ -748,12 +751,12 @@ footer {
 }
 
 .signup-button {
-    background-color: #ff6a00;
+    background-color: #3A8DDE;
     color: white;
 }
 
 .signup-button:hover {
-    background-color: #e65c00;
+    background-color: #2F7AC2;
     color: white;
 }
 
